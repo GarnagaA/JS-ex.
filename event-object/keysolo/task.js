@@ -17,19 +17,65 @@ class Game {
   }
 
   registerEvents() {
-    /*
-      TODO:
-      Написать обработчик события, который откликается
-      на каждый введённый символ.
-      В случае правильного ввода слова вызываем this.success()
-      При неправильном вводе символа - this.fail();
-     */
-  }
+    const array = [...this.wordElement.children]
+    // const array2 = [...word]
+    // console.log(array2)
+    const suc = () => this.success()
+    const fail = () => this.fail()
+    let intervalId
+    // let currentSymbol = this.currentSymbol
+    let currentSymbol =  this.currentSymbol
+    let nextCurrentSymbol = this.currentSymbol.nextElementSibling
+    //
+    // function onKeyPress (event) {
+    //   let letter = event.key.toString().toLowerCase()
+    //   console.log(currentSymbol)
+    //   console.log(letter)
+    //
+    //   if (letter === currentSymbol) {
+    //
+    //     // this.currentSymbol.classList.remove('symbol_current')
+    //     // this.currentSymbol.nextElementSibling.classList.add('symbol_current')
+    //   } else this.fail()
+    // }
+
+  //   window.addEventListener('keydown', function (event) {
+  //     if (document.querySelector('.symbol_current').textContent.toLowerCase() === event.key.toLowerCase()) {
+  //       suc()
+  //       document.querySelector('.symbol_current').nextElementSibling.classList.add('symbol_current')
+  //       setTimeout(() => document.querySelector('.symbol_current').classList.remove('symbol_current'))
+  //     } else fail()
+  //   })
+  // }
+
+
+      Array.from(document.querySelectorAll('.symbol')).forEach((e) => {
+        document.addEventListener('KeyboardEvent', function (event) {
+          if (document.querySelector('.symbol_current').textContent.toLowerCase() === event.key.toLowerCase()) {
+            suc()
+            document.querySelector('.symbol_current').nextElementSibling.classList.add('symbol_current')
+            setTimeout(() => document.querySelector('.symbol_current').classList.remove('symbol_current'))
+          } else fail()
+           }
+           )
+      })
+}
+
+
+      // window.addEventListener('keydown', function (event) {
+      //   letter = event.key.toString().toLowerCase()
+      //   console.log(letter)
+      //   console.log(currentSymbol)
+      //   if ( letter ===  currentSymbol ) {
+      //     suc()
+      //   } else fail()
+      // })
 
   success() {
     this.currentSymbol.classList.add('symbol_correct');
     this.currentSymbol = this.currentSymbol.nextElementSibling;
     if (this.currentSymbol !== null) {
+      this.registerEvents()
       return;
     }
 
@@ -74,14 +120,10 @@ class Game {
   }
 
   renderWord(word) {
-    const html = [...word]
-      .map(
-        (s, i) =>
-          `<span class="symbol ${i === 0 ? 'symbol_current': ''}">${s}</span>`
-      )
-      .join('');
-    this.wordElement.innerHTML = html;
-
+    const renderCode = [...word].map((el, index) =>
+        `<span class="symbol ${index === 0 ? 'symbol_current': ''}">${el}</span>`)
+        .join('');
+    this.wordElement.innerHTML = renderCode;
     this.currentSymbol = this.wordElement.querySelector('.symbol_current');
   }
 }

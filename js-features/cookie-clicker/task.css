@@ -1,0 +1,43 @@
+.clicker__status {
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.clicker {
+    display: flex;
+}
+
+.button__plus {
+    background-color: #3dff2f;
+    left: 0;
+    border-radius: 10px;
+    height: 50px;
+    width: 50%;
+}
+.button__plus:hover {
+    background-color: #3dff2f;
+    transform: translateY(-2px);
+    font-size: 16px;
+    color: black;
+}
+
+.button__minus {
+    background-color: red;
+    right: 0;
+    border-radius: 10px;
+    height: 50px;
+    width: 50%;
+
+}
+.button__minus:hover {
+    background-color: red;
+    transform: translateY(-2px);
+    font-size: 16px;
+    color: black;
+
+}
+
+.clicker__cookie {
+    margin: auto 0;
+    transition: width 50ms;
+}

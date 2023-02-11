@@ -2,12 +2,18 @@
   font-size: 50px;
 }
 
-.symbol_correct {
-  color: green;
-}
-
 .word_incorrect {
   background: red;
   color: #fff;
 }
+
+.symbol_current {
+  color: yellow;
+  font-size: 55px;
+}
+
+.symbol_correct {
+  color: green;
+}
+
 

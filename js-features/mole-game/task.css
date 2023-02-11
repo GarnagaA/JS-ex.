@@ -19,6 +19,13 @@
   margin: 0 15px 30px;
   background: gray;
   border-radius: 50%;
+  cursor: pointer;
+}
+
+.hole:hover{
+  border: 3px solid black;
+  transform: translateY(1px);
+  transition: 1s;
 }
 
 .hole_has-mole {

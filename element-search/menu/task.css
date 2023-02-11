@@ -14,16 +14,17 @@ body {
   margin: 0;
 }
 
-.menu__link {
+.menu__link, .menu_sub {
   text-decoration: none;
   color: #000;
 }
 
-.menu__link:hover {
+.menu__link:hover, .menu__item, .menu_sub{
   color: whitesmoke;
+  display: block;
 }
 
-.menu__item {
+.menu__item, .menu__link{
   position: relative;
 }
 
@@ -31,6 +32,7 @@ body {
   display: none;
   position: absolute;
   padding: 10px 10px 0 10px;
+  background: gray;
 }
 
 .menu_sub .menu__item {

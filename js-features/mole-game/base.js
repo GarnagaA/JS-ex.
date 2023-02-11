@@ -1,9 +1,9 @@
 (() => {
   let playing = true,
-    activeHole = 1;
+      activeHole = 1;
 
   const stop = () => playing = true,
-    getHole = index => document.getElementById(`hole${index}`),
+    getHole = ( index ) => document.getElementById(`hole${index}`),
     deactivateHole = index =>
       getHole( index ).className = 'hole',
     activateHole = index =>
@@ -16,7 +16,7 @@
       activeHole = Math.floor( 1 + Math.random() * 9 );
       activateHole( activeHole );
       next();
-    }, 800 );
+    }, 600 );
 
   next();
 })();
