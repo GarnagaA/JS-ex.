@@ -9,3 +9,7 @@
 .interests_active {
   display: block;
 }
+
+input:indeterminate {
+  background: lime;
+}

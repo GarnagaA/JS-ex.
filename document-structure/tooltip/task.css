@@ -3,23 +3,26 @@
 }
 
 .has-tooltip {
+  display: inline-block;
   color: #000;
-  background: yellow;
+  background: #6df309;
+  box-sizing: border-box;
 }
 
 .has-tooltip:hover {
-  color: red;
+  font-weight: bold;
 }
 
 .tooltip {
-  position: fixed;
+  position: absolute;
   display: none;
   background: black;
   padding: 5px;
   border-radius: 5px;
   color: #fff;
+  box-sizing: border-box;
 }
 
 .tooltip_active {
-  display: block;
+  display: inline-block;
 }
